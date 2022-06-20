@@ -1,0 +1,15 @@
+server:
+  port: 8030
+spring:
+  mvc:
+    servlet:
+      path: /ribbon
+  application:
+    name: ribbon-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public

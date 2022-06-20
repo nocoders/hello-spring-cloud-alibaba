@@ -3,9 +3,9 @@ server:
 spring:
   mvc:
     servlet:
-      path: /admin
+      path: /stock
   application:
-    name: admin
+    name: stock-service
     cloud:
       nacos:
         server-addr: 127.0.0.1:8848

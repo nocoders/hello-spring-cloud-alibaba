@@ -1,4 +1,4 @@
-package com.crop.admin;
+package com.crop.stock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2022/6/18 17:07
  */
 @SpringBootApplication
-public class AdminApplication {
+public class StockApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AdminApplication.class, args);
+        SpringApplication.run(StockApplication.class, args);
     }
 }

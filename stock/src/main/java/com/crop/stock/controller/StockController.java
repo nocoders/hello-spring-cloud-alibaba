@@ -1,5 +1,6 @@
-package com.crop.admin.controller;
+package com.crop.stock.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/stock")
 public class StockController {
 
+    @Value("${server.port}")
+    private String port;
     @GetMapping("/down")
     public String order(){
-        return "扣减库存";
+        return port+"扣减库存";
     }
 }
