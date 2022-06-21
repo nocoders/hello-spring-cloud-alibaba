@@ -1,4 +1,4 @@
-package com.crop;
+package com.crop.config;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
