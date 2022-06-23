@@ -1,8 +1,7 @@
 package com.crop.order.controller;
 
+import com.crop.order.config.UserConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,16 +13,12 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 @RequestMapping("/order")
-@RefreshScope
 public class OrderController {
 
     @Autowired
     private RestTemplate restTemplate;
-
-//    @Value("${user.name}")
-//    private String name;
-//    @Value("${user.age}")
-//    private String age;
+    @Autowired
+    private UserConfig userConfig;
 
     @GetMapping("/down")
     public String order() {
@@ -31,10 +26,10 @@ public class OrderController {
         System.out.println(stockRes);
         return stockRes + ",下单成功";
     }
-//
-//    @GetMapping("/config")
-//    public String configGet(){
-//
-//        return "用户名："+ name +",年龄：" + age;
-//    }
+
+    @GetMapping("/config")
+    public String configGet() {
+
+        return "用户名：" + userConfig.getUserName() + ",年龄：" + userConfig.getUserAge();
+    }
 }

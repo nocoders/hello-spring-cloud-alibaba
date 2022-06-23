@@ -15,9 +15,9 @@ spring:
         namespace: public
       config:
         server-addr: 127.0.0.1:8848
-#        username: nacos
-#        password: nacos
+        username: nacos
+        password: nacos
         file-extension: yml
 #        group: DEFAULT_GROUP
-        namespace: 06462c76-f0e9-456d-8066-b5d547b40a66
+        namespace: eb51e5a1-b519-4771-8261-8e3d641e1df7
 #        prefix: order-service
