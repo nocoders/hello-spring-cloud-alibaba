@@ -21,3 +21,10 @@ spring:
 #        group: DEFAULT_GROUP
         namespace: eb51e5a1-b519-4771-8261-8e3d641e1df7
 #        prefix: order-service
+#        extension-configs:
+#         - data-id: config.properties
+#           refresh: true
+    sentinel:
+      transport:
+        port: 9001
+        dashboard: 127.0.0.1:9000

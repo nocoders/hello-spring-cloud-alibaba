@@ -16,7 +16,7 @@ public class StockController {
     @Value("${server.port}")
     private String port;
     @GetMapping("/down")
-    public String order(){
+    public String down(){
         return port+"扣减库存";
     }
 }

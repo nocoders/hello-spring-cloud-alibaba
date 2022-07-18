@@ -1,11 +1,11 @@
 package com.crop.order.controller;
 
-import com.crop.order.config.UserConfig;
+import com.crop.order.config.SystemConfig;
+import com.crop.order.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @author linmeng
@@ -15,14 +15,18 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/order")
 public class OrderController {
 
+//    @Autowired
+//    private RestTemplate restTemplate;
     @Autowired
-    private RestTemplate restTemplate;
+    private SystemConfig systemConfig;
+
     @Autowired
-    private UserConfig userConfig;
+    private StockFeignService stockFeignService;
 
     @GetMapping("/down")
-    public String order() {
-        String stockRes = restTemplate.getForObject("http://stock-service/stock/stock/down", String.class);
+    public String down() {
+//        String stockRes = restTemplate.getForObject("http://stock-service/stock/stock/down", String.class);
+        String stockRes = stockFeignService.down();
         System.out.println(stockRes);
         return stockRes + ",下单成功";
     }
@@ -30,6 +34,6 @@ public class OrderController {
     @GetMapping("/config")
     public String configGet() {
 
-        return "用户名：" + userConfig.getUserName() + ",年龄：" + userConfig.getUserAge();
+        return "用户名：" + systemConfig.getUserName() + ",年龄：" + systemConfig.getUserAge();
     }
 }
