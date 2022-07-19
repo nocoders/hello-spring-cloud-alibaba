@@ -29,7 +29,7 @@ spring:
         port: 9001
         dashboard: 127.0.0.1:9000
       datasource:
-        ds:
+        flow:
           nacos:
             server-addr: 127.0.0.1:8848
             username: nacos
@@ -40,5 +40,18 @@ spring:
             group-id: DEFAULT_GROUP
             # 流控规则  rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow，degrade，authority，system, param-flow, gw-flow, gw-api-group)
             rule-type: flow
-            #  读取培训文件类型为json
+            #  读取配置文件类型为json
+            data-type: json
+        degrade:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            namespace: eb51e5a1-b519-4771-8261-8e3d641e1df7
+            # 读取配置文件的 data-id
+            data-id: degradeRule.json
+            group-id: DEFAULT_GROUP
+            # 流控规则  rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow，degrade，authority，system, param-flow, gw-flow, gw-api-group)
+            rule-type: degrade
+            #  读取配置文件类型为json
             data-type: json

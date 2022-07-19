@@ -15,9 +15,9 @@ import java.util.List;
  * @author linmeng
  * @date 2022/7/12 10:13
  */
-//@Configuration
-//public class SentinelConfig {
-//
+@Configuration
+public class SentinelConfig {
+
 //    @PostConstruct
 //    public void initFlowRules() {
 //        List<FlowRule> rules = new ArrayList<>();
@@ -30,7 +30,7 @@ import java.util.List;
 //        rules.add(rule);
 //        FlowRuleManager.loadRules(rules);
 //    }
-//
+
 //    @PostConstruct
 //    public void initDegradeRules() {
 //        ArrayList<DegradeRule> rules = new ArrayList<>();
@@ -50,7 +50,6 @@ import java.util.List;
 //                .setSlowRatioThreshold(0.1);
 //        rules.add(rule);
 //        DegradeRuleManager.loadRules(rules);
-//
+
 //    }
-//}
-//
+}
