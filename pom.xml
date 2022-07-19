@@ -20,7 +20,7 @@
         <spring-boot-version>2.3.12.RELEASE</spring-boot-version>
         <spring-cloud-version>Hoxton.SR12</spring-cloud-version>
         <!--   spring cloud 版本2.2.7.RELEASE 启动失败     -->
-        <spring-cloud-alibaba-version>2.2.6.RELEASE</spring-cloud-alibaba-version>
+        <spring-cloud-alibaba-version>2.2.8.RELEASE</spring-cloud-alibaba-version>
         <spring-cloud-alibaba-nacos-version>2.0.3</spring-cloud-alibaba-nacos-version>
     </properties>
     <dependencies>
